@@ -1,4 +1,4 @@
-Introduction to Wireless Communication System
+1.1 Introduction to Wireless Communication System
 
 Traditional wireless communication systems are divided into two parts: digital and analog.
 The digital baseband part and the analog radio frequency part are converted through a Digital-to-Analog Converter (DAC) and an Analog-to-Digital Converter (ADC).
@@ -9,35 +9,99 @@ broadcasts, as well as older analog telephones. These all use analog signals to 
 over time and are transmitted through carrier by the process of modulation, amplification, and antenna emission. However, analog signals are more susceptible to 
 noise and interference, easily causing distortion during transmission, and are relatively difficult to manage in terms of signal processing and storage.
 
-To solve these problems, modern communication mostly shifts to using Digital Communication Systems. Unlike analog, digital communication is based on discontinuous signals composed of 0s and 1s, offering advantages such as strong anti-interference, stable transmission, and ease of compression and encryption. The core part of this is the "Digital Baseband" system. The digital baseband part is generally referred to as the "digital communication system," primarily for processing digital baseband communication signals. "Baseband" refers to digital signals without a carrier, typically composed of 0s and 1s, for convenient signal processing using Digital Signal Processors (DSP) or Micro-Processors (uP). A digital communication system includes two main parts: a digital transmitter and a digital receiver, as shown in Figure 3. The main blocks of a digital transmitter include Source Coding (data organization to avoid overly long transmitted data) and Cyclic Redundancy Check (CRC).
+To solve these problems, modern communication mostly shifts to using Digital Communication Systems. Unlike analog, digital communication is based on discontinuous 
+signals composed of 0s and 1s, offering advantages such as strong anti-interference, stable transmission, and ease of compression and encryption. The core part of 
+this is the "Digital Baseband" system. The digital baseband part is generally referred to as the "digital communication system," primarily for processing digital 
+baseband communication signals. "Baseband" refers to digital signals without a carrier, typically composed of 0s and 1s, for convenient signal processing using like
+Digital Signal Processors (DSP) or Micro-Processors (uP). A digital communication system includes two main parts: a digital transmitter and a digital receiver, as 
+The main blocks of a digital transmitter include Source Coding (data organization to avoid overly long transmitted data) and Cyclic Redundancy 
+Check (CRC).
+
 1.2 Digital Modulation and Vector Modulation
-Modulation is a term used in the communication industry, whether in wired or wireless communication, terrestrial or satellite communication. It is a signal conversion process that transforms the original digital signal (0s or 1s) into a signal represented by the amplitude, frequency, and/or relative phase of a carrier wave.
-Baseband signal modulation is the process of proportionally changing the amplitude, frequency, or phase of a carrier wave according to the digital signal combination of 0s and 1s in the baseband digital signal. The first step of modulation is digital modulation, which converts the baseband digital signal (0s and 1s) into the amplitude, frequency, or phase of the carrier to be changed. The second step then loads the amplitude, frequency, or phase onto the carrier, which can be done digitally or analogly. Figure 1-1 shows the baseband signal modulation system.
-Based on specific applications, signal modulation can change amplitude, frequency, and phase individually, or a combination of them simultaneously. Early forms of this modulation were performed through traditional analog methods, such as Amplitude Modulation (AM), Frequency Modulation (FM), or Phase Modulation (PM). With advancements in technology and communication, it evolved to I-Q Vector Modulation. Vector modulation is a very powerful modulation scheme because it can generate arbitrary carrier phase and amplitude. In this modulation method, baseband digital information is separated into two independent components: I (in-phase) and Q (quadrature). These I and Q components are then combined to form the baseband modulated signal. The most important characteristic of I and Q components is that they are independent (orthogonal). The document further discusses I and Q components and why digital systems use them.
-A simple way to understand signal modulation principles is by using the I-Q vector diagram shown in Figure 1-2. In most wireless communication systems, the carrier frequency is fixed, so only phase and amplitude need to be considered. The unmodulated carrier serves as a reference for phase and frequency, and the modulated signal is explained based on its relationship with the carrier. Phase and amplitude can be represented as dashed points in the I-Q plane in a polar or vector coordinate diagram, as seen in Figure 1-2.
-I represents the in-phase (phase reference) component, and Q represents the quadrature (90° phase difference from I) component. A point can also be represented by vector addition of a specific amplitude of the in-phase carrier and a specific amplitude of the quadrature carrier; this is the principle of I-Q modulation. The principle involves transmitting by applying the amplitude and/or phase corresponding to a predetermined position on the I-Q plane to the carrier's amplitude and/or phase. Each position represents a bit combination that can be decoded at the receiver. The mapping of bit combinations into I-Q signals at the instant of sampling at the receiver is called a constellation diagram, as shown in Figure 1-3.
-A symbol represents a group of digital data bit combinations, which are the codes for the digital message. The number of bits contained in each symbol, i.e., bits per symbol, is determined by the modulation format. For example, Binary Phase Shift Keying (BPSK) uses 1 bit, Quadrature Phase Shift Keying (QPSK) uses 2 bits, and 8-Phase Shift Keying (8PSK) uses 3 bits. Ideally, each state bit position on the constellation diagram should appear as a single point. However, due to various interferences and noise in the system, these states can spread (with dispersed points appearing around each state). Figure 1-3 shows the constellation diagram for 16-QAM (16 Quadrature Amplitude Modulation); note that there are 16 possible state positions. This format uses a 4-bit data string, encoded as a single amplitude/phase state or symbol. To generate this modulation format, both I and Q carriers need to adopt 4 different amplitude levels based on the transmitted code.
-In digital modulation, the signal moves among a finite number of symbols or states. The rate at which the carrier moves between points on the constellation diagram is called the symbol rate. The more constellation states used, the lower the symbol rate required for a given bit rate. The symbol rate is very important because it represents the bandwidth required for transmitting the signal. A lower symbol rate means less bandwidth is required for transmission. For example, the previously mentioned 16-QAM format uses a rate of 4 bits per symbol. If the wireless transmission rate is 16 Mbps, the symbol rate = 16 Mbps divided by 4 bits, which is 4 MHz. This provides a symbol rate that is one-quarter of the bit rate and a more efficient transmission bandwidth (4 MHz versus 16 MHz). Figure 1-3 is a schematic diagram of a 16-QAM system.
+Modulation is a term used in the communication industry, whether in wired or wireless communication, terrestrial or satellite communication. It is a signal 
+conversion process that transforms the original digital signal (0s or 1s) into a signal represented by the amplitude, frequency, and/or relative phase of a carrier
+wave.
+Baseband signal modulation is the process of proportionally changing the amplitude, frequency, or phase of a carrier wave according to the digital signal combination
+of 0s and 1s in the baseband digital signal. The first step of modulation is digital modulation, which converts the baseband digital signal (0s and 1s) into the 
+amplitude, frequency, or phase of the carrier to be changed. The second step then loads the amplitude, frequency, or phase onto the carrier, which can be done 
+digitally or analogly. Figure 1-1 shows the baseband signal modulation system.
+Based on specific applications, signal modulation can change amplitude, frequency, and phase individually, or a combination of them simultaneously. Early forms of 
+this modulation were performed through traditional analog methods, such as Amplitude Modulation (AM), Frequency Modulation (FM), or Phase Modulation (PM). With 
+advancements in technology and communication, it evolved to I-Q Vector Modulation. Vector modulation is a very powerful modulation scheme because it can generate 
+arbitrary carrier phase and amplitude. In this modulation method, baseband digital information is separated into two independent components: I (in-phase) and Q 
+(quadrature). These I and Q components are then combined to form the baseband modulated signal. The most important characteristic of I and Q components is that 
+they are independent (orthogonal). The document further discusses I and Q components and why digital systems use them.
+A simple way to understand signal modulation principles is by using the I-Q vector diagram shown in Figure 1-2. In most wireless communication systems, the carrier 
+frequency is fixed, so only phase and amplitude need to be considered. The unmodulated carrier serves as a reference for phase and frequency, and the modulated 
+signal is explained based on its relationship with the carrier. Phase and amplitude can be represented as dashed points in the I-Q plane in a polar or vector 
+coordinate diagram, as seen in Figure 1-2.
+I represents the in-phase (phase reference) component, and Q represents the quadrature (90° phase difference from I) component. A point can also be represented by 
+vector addition of a specific amplitude of the in-phase carrier and a specific amplitude of the quadrature carrier; this is the principle of I-Q modulation. The 
+principle involves transmitting by applying the amplitude and/or phase corresponding to a predetermined position on the I-Q plane to the carrier's amplitude and/or 
+phase. Each position represents a bit combination that can be decoded at the receiver. The mapping of bit combinations into I-Q signals at the instant of sampling 
+at the receiver is called a constellation diagram, as shown in Figure 1-3.
+A symbol represents a group of digital data bit combinations, which are the codes for the digital message. The number of bits contained in each symbol, i.e., bits 
+per symbol, is determined by the modulation format. For example, Binary Phase Shift Keying (BPSK) uses 1 bit, Quadrature Phase Shift Keying (QPSK) uses 2 bits, and 8
+-Phase Shift Keying (8PSK) uses 3 bits. Ideally, each state bit position on the constellation diagram should appear as a single point. However, due to various 
+interferences and noise in the system, these states can spread (with dispersed points appearing around each state). Figure 1-3 shows the constellation diagram for 
+16-QAM (16 Quadrature Amplitude Modulation); note that there are 16 possible state positions. This format uses a 4-bit data string, encoded as a single amplitude/
+phase state or symbol. To generate this modulation format, both I and Q carriers need to adopt 4 different amplitude levels based on the transmitted code.
+
+In digital modulation, the signal moves among a finite number of symbols or states. The rate at which the carrier moves between points on the constellation diagram
+is called the symbol rate. The more constellation states used, the lower the symbol rate required for a given bit rate. The symbol rate is very important because it
+represents the bandwidth required for transmitting the signal. A lower symbol rate means less bandwidth is required for transmission. For example, the previously 
+mentioned 16-QAM format uses a rate of 4 bits per symbol. If the wireless transmission rate is 16 Mbps, the symbol rate = 16 Mbps divided by 4 bits, which is 4 MHz. 
+This provides a symbol rate that is one-quarter of the bit rate and a more efficient transmission bandwidth (4 MHz versus 16 MHz). Figure 1-3 is a schematic diagram
+of a 16-QAM system.
+
 1.3 I-Q Modulation and Demodulation
-In digital communication, I-Q modulation places the encoded digital I and Q baseband information into a carrier. See Figure 4. I-Q modulation generates the I and Q components of the signal. Fundamentally, it's a conversion between Cartesian coordinates and polar coordinates, implemented through hardware or software. Figure 1-4 illustrates I-Q Modulation.
-I-Q modulation takes I and Q baseband signals as inputs and multiplies them with sinusoidal and cosine waves generated by a local oscillator (LO). Subsequently, both I and Q are up-converted to a preset radio frequency carrier. The amplitude information of the I component modulates the carrier to generate the in-phase component, and the amplitude information of the Q component modulates the 90° (quadrature) phase-shifted carrier to generate the quadrature component. These two orthogonal modulated carrier signals are then added to generate a complex I-Q modulated carrier signal. The main advantage of I-Q modulation is that it can easily combine independent signal components into a single complex signal, and then just as easily decompose this complex signal back into independent components.
-Signals separated by 90° are orthogonal to each other. The orthogonal relationship between I and Q signals means that these two signals are truly independent. They are two independent components of the same signal, and although changes in the Q input will certainly change the composite output signal, they will not cause any effect on the I component. Similarly, changes in the I input will not affect the Q signal, meaning they do not interfere with each other.
-As shown in Figure 1-5, I-Q demodulation is the mirror image of I-Q modulation shown in Figure 1-4. I-Q demodulation is the process of recovering the original I and Q baseband signals from a complex I-Q modulated input signal. Figure 1-5 depicts I-Q Demodulation.
-The first step in the demodulation process is to phase-lock the receiver LO frequency to the carrier frequency of the transmitter. To correctly recover the I and Q baseband components, the receiver LO must be phase-locked to the same frequency as the transmitter carrier (or mixer LO) through a Phase-Locked Loop (PLL) circuit. Subsequently, the I-Q modulated carrier is mixed with the unshifted LO (sine wave) and the 90° phase-shifted LO (cosine wave) to generate the original I and Q baseband signals or components.
-Fundamentally, the I-Q demodulation process is a conversion between polar coordinates and Cartesian coordinates. Typically, without polar to Cartesian conversion, information cannot be plotted in polar format and reinterpreted as Cartesian values. See Figure 1-2. This conversion is fully consistent with the in-phase and quadrature mixing process performed by an I-Q demodulator.
-The mathematical model for quadrature modulation and demodulation is given. If I-channel and Q-channel inputs are a and b, respectively, the I-channel signal is multiplied by cos(ωct), and the Q-channel signal is multiplied by sin(ωct). Then, they are summed (usually the Q-channel is multiplied by -1 when summed), and the output signal is s(t) = a cos(ωct) - b sin(ωct). This completes the modulation. At the receiver, after receiving s(t), it is split into two paths:
+In digital communication, I-Q modulation places the encoded digital I and Q baseband information into a carrier. See Figure 4. I-Q modulation generates the I and Q 
+components of the signal. Fundamentally, it's a conversion between Cartesian coordinates and polar coordinates, implemented through hardware or software. Figure 1-4
+illustrates I-Q Modulation.
+I-Q modulation takes I and Q baseband signals as inputs and multiplies them with sinusoidal and cosine waves generated by a local oscillator (LO). Subsequently, both
+I and Q are up-converted to a preset radio frequency carrier. The amplitude information of the I component modulates the carrier to generate the in-phase component,
+and the amplitude information of the Q component modulates the 90° (quadrature) phase-shifted carrier to generate the quadrature component. These two orthogonal 
+modulated carrier signals are then added to generate a complex I-Q modulated carrier signal. The main advantage of I-Q modulation is that it can easily combine 
+independent signal components into a single complex signal, and then just as easily decompose this complex signal back into independent components.
+Signals separated by 90° are orthogonal to each other. The orthogonal relationship between I and Q signals means that these two signals are truly independent. They 
+are two independent components of the same signal, and although changes in the Q input will certainly change the composite output signal, they will not cause any 
+effect on the I component. Similarly, changes in the I input will not affect the Q signal, meaning they do not interfere with each other.
+As shown in Figure 1-5, I-Q demodulation is the mirror image of I-Q modulation shown in Figure 1-4. I-Q demodulation is the process of recovering the original I and
+Q baseband signals from a complex I-Q modulated input signal. Figure 1-5 depicts I-Q Demodulation.
+The first step in the demodulation process is to phase-lock the receiver LO frequency to the carrier frequency of the transmitter. To correctly recover the I and Q 
+baseband components, the receiver LO must be phase-locked to the same frequency as the transmitter carrier (or mixer LO) through a Phase-Locked Loop (PLL) circuit. 
+Subsequently, the I-Q modulated carrier is mixed with the unshifted LO (sine wave) and the 90° phase-shifted LO (cosine wave) to generate the original I and Q 
+baseband signals or components.
+Fundamentally, the I-Q demodulation process is a conversion between polar coordinates and Cartesian coordinates. Typically, without polar to Cartesian conversion, 
+information cannot be plotted in polar format and reinterpreted as Cartesian values. See Figure 1-2. This conversion is fully consistent with the in-phase and 
+quadrature mixing process performed by an I-Q demodulator.
+The mathematical model for quadrature modulation and demodulation is given. If I-channel and Q-channel inputs are a and b, respectively, the I-channel signal is 
+multiplied by cos(ωct), and the Q-channel signal is multiplied by sin(ωct). Then, they are summed (usually the Q-channel is multiplied by -1 when summed), and the 
+output signal is s(t) = a cos(ωct) - b sin(ωct). This completes the modulation. At the receiver, after receiving s(t), it is split into two paths:
 • One path is multiplied by cos(ωct) and then integrated to obtain a.
 • The other path is multiplied by sin(ωct) and then integrated to obtain b. Here, T only needs to be an integer multiple of 2π/ωc.
+
 1.4 Why Use I and Q
-Mathematically, assuming a carrier is cos(a) and a signal is cos(b), directly multiplying the two signals can achieve spectrum shifting: cos(a)cos(b) = 0.5cos(a+b) + 0.5cos(a-b). This generates two carrier frequencies, a+b and a-b, under the frequency a carrier. a+b is equivalent to the frequency shifting up from a to a+b, while a-b is equivalent to the frequency shifting down from a to a-b. For signal transmission, only one signal is needed. That is, one is chosen, and the other is useless and needs to be filtered out. Although in practice, filters are not ideal and cannot completely filter out the other frequency signal.
-Conversely, inputting a frequency a carrier signal and a frequency b carrier signal, and obtaining a single a+b or a-b frequency carrier signal, is achieved using the following formula: cos(a)cos(b) + sin(a)sin(b) = cos(a-b). This formula clearly indicates that by multiplying a frequency a carrier signal and a frequency b carrier signal, then multiplying them after each is phase-shifted by 90 degrees, and then adding them, an a-b frequency carrier signal can be obtained.
+Mathematically, assuming a carrier is cos(a) and a signal is cos(b), directly multiplying the two signals can achieve spectrum shifting: cos(a)cos(b) = 0.5cos(a+b) +
+0.5cos(a-b). This generates two carrier frequencies, a+b and a-b, under the frequency a carrier. a+b is equivalent to the frequency shifting up from a to a+b, while
+a-b is equivalent to the frequency shifting down from a to a-b. For signal transmission, only one signal is needed. That is, one is chosen, and the other is useless
+and needs to be filtered out. Although in practice, filters are not ideal and cannot completely filter out the other frequency signal.
+Conversely, inputting a frequency a carrier signal and a frequency b carrier signal, and obtaining a single a+b or a-b frequency carrier signal, is achieved using 
+the following formula: cos(a)cos(b) + sin(a)sin(b) = cos(a-b). This formula clearly indicates that by multiplying a frequency a carrier signal and a frequency b 
+carrier signal, then multiplying them after each is phase-shifted by 90 degrees, and then adding them, an a-b frequency carrier signal can be obtained.
 It is well known that the I-channel is cos(b) and the Q-channel is sin(b). These two channels can be combined as follows:
 • cos(b), sin(b)
 • cos(b), -sin(b)
 • -cos(b), sin(b)
-• -cos(b), -sin(b) This represents the four-phase modulation (QPSK) of I-Q signals. To create more types of modulation schemes, various modulation methods (BPSK, QAM, etc.) can be derived by combining signals in a similar way.
-Digital modulation uses I and Q components because it provides a simple, effective, and powerful modulation method to generate, transmit, and recover digital data at the receiver. Modulation signals in the I-Q domain have many advantages:
-• a. I-Q implementation provides a way to generate composite signals (where both phase and amplitude change). I-Q modulators do not use non-linear, difficult-to-implement phase modulation, but rather simple linear modulation of the carrier's amplitude and its quadrature component. Mixers with wide modulation bandwidth and good linearity are easily obtained, as are LOs based on baseband and intermediate frequency software. To generate a composite modulated signal, only the baseband I and Q components of the signal need to be produced.
+• -cos(b), -sin(b) 
+This represents the four-phase modulation (QPSK) of I-Q signals. To create more types of modulation schemes, various modulation methods (BPSK, QAM, etc.) can be 
+derived by combining signals in a similar way.
+Digital modulation uses I and Q components because it provides a simple, effective, and powerful modulation method to generate, transmit, and recover digital data 
+at the receiver. Modulation signals in the I-Q domain have many advantages:
+• a. I-Q implementation provides a way to generate composite signals (where both phase and amplitude change). I-Q modulators do not use non-linear, difficult-to-
+implement phase modulation, but rather simple linear modulation of the carrier's amplitude and its quadrature component. Mixers with wide modulation bandwidth and 
+good linearity are easily obtained, as are LOs based on baseband and intermediate frequency software. To generate a composite modulated signal, only the baseband 
+I and Q components of the signal need to be produced.
 • b. Signal demodulation is equally simple and straightforward. Using I-Q demodulation, at least theoretically, baseband signals can be easily recovered.
 • c. Observing signals on the I-Q plane often provides better insight into the signal. Phenomena such as interference, frequency offset, phase noise, and AM-PM distortion, which are difficult to present using other methods, can be easily viewed on the I-Q plane.
 
