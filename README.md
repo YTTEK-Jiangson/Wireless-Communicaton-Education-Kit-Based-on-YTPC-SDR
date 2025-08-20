@@ -1,4 +1,4 @@
-![image](http://github.com/YTTEK-Jiangson/Wireless-Communicaton-Education-Kit-Based-on-YTPC-SDR/blob/main/ytpc.gif)
+![image](https://github.com/YTTEK-Jiangson/Wireless-Communicaton-Education-Kit-Based-on-YTPC-SDR/blob/main/ytpc.gif)
 
 # Wireless-Communicaton-Education-Kit-Based-on-YTPC-SDR
 This document is a wireless communication fundamentals training course manual prepared by YTTEK Technology, comprising a total of eight chapters.
