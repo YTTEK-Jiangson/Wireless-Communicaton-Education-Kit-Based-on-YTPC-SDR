@@ -15,34 +15,52 @@ These self-contained educational materials are offered exclusively and at no cos
 Wireless Communication Fundamentals: A Practical Approach Education Kit covers the fundamentals of Wireless Communication System design, including how the theories and concepts can be applied in the design of a wireless communication and in the implementation of a basic modulation/demodulation module. A full description of the education kit can be found here.
 
 **Kit specification:**
+
 A full set of 8 modules with lecture slides and lab exercises (in selected modules) ready for use in a typical 10-12-week undergraduate course (full syllabus below).
 Lab manuals include additional libraries for lab exercises and solutions for faculty.
 Prerequisites: Students are required to have an understanding of Communication Theory and the basics of Matlab language.
 
 **Course Aim**
+
 To produce students with solid introductory knowledge on Wireless Communication concepts and application of these concepts in simulation, verification, and physical implementation of basic modulation/demodulation modules using standard industry tools.
 
 **Tools Used**
+
 Maltab.
 Python
 C++
 
 **Syllabus**
+
 **Part 1: Fundamentals**
+
 **Chapter 1: Introduction to Digital Communications**
+
 1.1 Overview of Wireless Communication Systems
+
 1.2 Digital Modulation and Vector Modulation
+
 1.3 I-Q Modulation and Demodulation
+
 1.4 Concept of a Digital Communication Transmitter
+
 1.5 Concept of a Digital Communication Receiver
+
 1.6 Selecting the Appropriate Filter
+
 1.7 Vector Constellation (I/Q) Diagrams
 
+
 **Chapter 2: 2ASK Modulation/Demodulation Experiment**
+
 2.1 Experiment Objective
+
 2.2 Required Equipment
+
 2.3 Experimental Principle
+
 2.4 Programming Approach
+
 2.5 Experimental Procedure
 
 **Chapter 3: 2FSK Modulation/Demodulation Experiment**
