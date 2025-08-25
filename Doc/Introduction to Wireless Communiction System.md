@@ -15,16 +15,24 @@ The digital baseband part is generally referred to as the "digital communication
 The main blocks of a digital transmitter include: 
 
 Source Coding: which encodes and compresses raw data to reduce the amount of information to be transmitted; 
+
 Cyclic Redundancy Check (CRC): which adds redundant bits for error detection to prevent overly long transmitted data; 
+
 Scrambling: which scrambles 0s and 1s in the raw data to avoid long sequences of 0s or 1s; 
+
 Channel Coding: which adds redundant bits for error correction; and 
+
 Modulation, which converts signals into the amplitude, frequency, or phase of a carrier, or a combination thereof, to improve spectral efficiency.
 
 The main blocks of a digital receiver include: 
 
 De-modulation: which restores the received signal, carried on the carrier's amplitude, frequency, or phase, or a combination thereof, into 0s or 1s bit signals; 
+
 Channel Decoding: which removes the redundant bits added for error correction; 
+
 Descrambling, which restores the scrambled 0s or 1s; 
+
 Cyclic Redundancy Check (CRC): which detects errors in the received signal through redundant bits; and 
+
 Source Decoding: which restores the encoded and compressed signal. 
 
