@@ -1,4 +1,4 @@
-## 1.	Digital Communication Transmitter Concept 
+## 2.	Digital Communication Transmitter Concept 
 Digital communication begins with voice encoding (assuming voice transmission), which is the process of sampling, quantizing, and converting original analog voice signals into digital data (Digitalizing). 
 
 Subsequently, data compression (Source coding) is used to reduce data volume and improve spectral efficiency. 
@@ -9,6 +9,7 @@ These techniques also simplify frequency synchronization and timing synchronizat
 
 Timing synchronization is the process of recovering the symbol clock from the received signal. 
 
+## 2.1 Digital Communication Transmitter Concept 
 At the transmitter, the symbol encoder converts the serial bit stream into appropriate I and Q baseband signals, which map to symbols on the I-Q plane. 
 The symbol clock represents the clock frequency and precise timing for individual symbol transmissions.
 
@@ -27,7 +28,7 @@ To improve the overall communication transmission performance of the system, fil
 
 The filtered I and Q baseband signals are the inputs to the I-Q modulator. The LO in the modulator may operate at an intermediate frequency (IF) or directly at the final wireless radio frequency carrier frequency. The modulator's output is a composite of the two orthogonal I and Q signals at IF (or RF). After modulation, if necessary, the signal is further up-converted to the target RF frequency. Any excess frequencies are then filtered out, and finally, the signal is fed into the output amplifier and transmitted.
 
-## 2.	Digital Communication Receiver Concept 
+## 2.2 .	Digital Communication Receiver Concept 
 A receiver is essentially the reverse implementation of a transmitter, but it is more complex in design. The receiver first down-converts the input RF signal to an intermediate frequency (IF) signal, then further down-converts it to baseband, and then demodulates it. 
 
 The ability to demodulate signals and recover original data is often quite challenging. Transmitted signals are often degraded during wireless transmission through the air by factors such as noise, signal interference, multipath, or fading.
