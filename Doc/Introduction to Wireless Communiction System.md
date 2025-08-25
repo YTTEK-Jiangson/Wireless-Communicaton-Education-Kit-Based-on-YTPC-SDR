@@ -12,7 +12,7 @@ To solve these problems, modern communication mostly relies on Digital Communica
 
 The digital baseband part is generally referred to as the "digital communication system," primarily for baseband digital communication signal processing. "Baseband" refers to digital signals without a carrier, typically composed of 0s and 1s, to facilitate signal processing using methods like a Digital Signal Processor (DSP) or Micro-Processor (uP). A digital communication system includes two main parts: a digital transmitter and a digital receiver, as shown in the block diagram of Figure 1.
  
-The main blocks of a digital transmitter include: 
+## 1.1 The main blocks of a digital transmitter include: 
 
 Source Coding: which encodes and compresses raw data to reduce the amount of information to be transmitted; 
 
@@ -24,7 +24,7 @@ Channel Coding: which adds redundant bits for error correction; and
 
 Modulation, which converts signals into the amplitude, frequency, or phase of a carrier, or a combination thereof, to improve spectral efficiency.
 
-The main blocks of a digital receiver include: 
+## 1.2 The main blocks of a digital receiver include: 
 
 De-modulation: which restores the received signal, carried on the carrier's amplitude, frequency, or phase, or a combination thereof, into 0s or 1s bit signals; 
 
